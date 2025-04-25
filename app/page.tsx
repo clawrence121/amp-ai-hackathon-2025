@@ -41,7 +41,7 @@ export default function Chat() {
                 )}
               >
                 <div className="mb-1 text-xs font-semibold">
-                  {m.role === "assistant" ? "AI Assistant" : "You"}
+                  {m.role === "assistant" ? "R'AMP CSM" : "You"}
                 </div>
                 <div
                   className={clsx(
