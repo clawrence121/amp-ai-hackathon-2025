@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
+import { Navbar } from "@/components/navbar/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className)}>
-        {/* <nav className="amp-sidenav"> hello world</nav> */}
-        <main>{children}</main>
+      <body className={clsx(inter.className, "flex")}>
+        <Navbar />
+        <main className="flex min-h-screen w-full flex-col overflow-auto pl-[255px] relative">
+          {children}
+        </main>
       </body>
     </html>
   );

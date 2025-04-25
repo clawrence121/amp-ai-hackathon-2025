@@ -4,62 +4,174 @@
  
 @layer base {
   :root {
+    /* Base theme colors */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
- 
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
- 
     --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
- 
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
- 
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
- 
     --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
- 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
- 
     --radius: 0.5rem;
+
+    /* Upsell Blue */
+    --upsell-blue-50: 201 83% 95%;
+    --upsell-blue-100: 201 83% 83%;
+    --upsell-blue-200: 201 78% 73%;
+    --upsell-blue-300: 201 78% 59%;
+    --upsell-blue-400: 201 89% 47%;
+    --upsell-blue-500: 210 79% 46%;
+    --upsell-blue-600: 220 69% 45%;
+    --upsell-blue-700: 231 59% 44%;
+    --upsell-blue-800: 210 62% 23%;
+    --upsell-blue-900: 217 58% 18%;
+    --upsell-blue-950: 220 87% 9%;
+
+    /* Upsell Gray */
+    --upsell-gray-50: 209 19% 94%;
+    --upsell-gray-100: 216 13% 88%;
+    --upsell-gray-200: 228 12% 83%;
+    --upsell-gray-300: 224 11% 72%;
+    --upsell-gray-400: 225 10% 65%;
+    --upsell-gray-500: 228 8% 57%;
+    --upsell-gray-600: 228 10% 48%;
+    --upsell-gray-700: 228 13% 39%;
+    --upsell-gray-800: 225 15% 30%;
+    --upsell-gray-900: 222 19% 21%;
+    --upsell-gray-950: 222 23% 11%;
+
+    /* Upsell Green */
+    --upsell-green-50: 156 100% 97%;
+    --upsell-green-100: 156 100% 95%;
+    --upsell-green-200: 156 100% 92%;
+    --upsell-green-300: 156 100% 86%;
+    --upsell-green-400: 156 100% 68%;
+    --upsell-green-500: 156 100% 50%;
+    --upsell-green-600: 157 99% 44%;
+    --upsell-green-700: 158 100% 37%;
+    --upsell-green-800: 158 100% 27%;
+    --upsell-green-900: 158 89% 20%;
+    --upsell-green-950: 158 89% 14%;
+
+    /* Upsell Purple */
+    --upsell-purple-50: 252 100% 99%;
+    --upsell-purple-100: 252 100% 97%;
+    --upsell-purple-200: 252 100% 95%;
+    --upsell-purple-300: 252 100% 92%;
+    --upsell-purple-400: 252 100% 86%;
+    --upsell-purple-500: 252 100% 73%;
+    --upsell-purple-600: 252 43% 51%;
+    --upsell-purple-700: 252 50% 36%;
+    --upsell-purple-800: 252 63% 27%;
+    --upsell-purple-900: 264 95% 16%;
+    --upsell-purple-950: 264 100% 11%;
+    --upsell-purple-onboarding: 252 89% 71%;
+
+    /* Upsell Pink */
+    --upsell-pink-100: 330 100% 87%;
+    --upsell-pink-500: 330 100% 60%;
+
+    /* Upsell Black */
+    --upsell-black-10: 0 0% 90%;
+    --upsell-black-20: 0 0% 80%;
+    --upsell-black-70: 0 0% 30%;
+    --upsell-black-80: 0 0% 20%;
+    --upsell-black-90: 0 0% 10%;
+    --upsell-black-95: 0 0% 5%;
+    --upsell-black-100: 0 0% 0%;
+
+    /* Upsell White */
+    --upsell-white-100: 0 0% 100%;
+
+    /* Upsell Utils */
+    --upsell-utils-avatar: 328 100% 42%;
+    --upsell-utils-error: 0 93% 65%;
+    --upsell-utils-warning: 44 100% 50%;
+    --upsell-utils-success: 157 99% 44%;
+    --upsell-utils-link: 201 89% 47%;
+    --upsell-utils-notification: 201 89% 47%;
+    --upsell-utils-orange: 44 100% 50%;
+
+    /* AMP Colors */
+    --amp-onyx-100: 180 2% 10%;
+    --amp-onyx-90: 240 3% 15%;
+    --amp-onyx-75: 180 1% 30%;
+    --amp-onyx-50: 180 1% 53%;
+    --amp-onyx-25: 209 31% 72%;
+    --amp-onyx-10: 209 45% 94%;
+
+    --amp-purple-500: 252 100% 73%;
+    --amp-purple-400: 252 100% 86%;
+
+    --amp-lime-100: 156 100% 50%;
+    --amp-lime-75: 156 99% 62%;
+    --amp-lime-50: 156 97% 74%;
+    --amp-lime-25: 156 91% 86%;
+    --amp-lime-10: 156 71% 93%;
+
+    --amp-violet-100: 252 100% 73%;
+    --amp-violet-75: 251 98% 79%;
+    --amp-violet-50: 249 94% 86%;
+    --amp-violet-25: 248 82% 92%;
+    --amp-violet-20: 246 36% 96%;
+    --amp-violet-10: 247 64% 96%;
+
+    --amp-sky-100: 200 100% 72%;
+    --amp-sky-50: 214 90% 93%;
+
+    --amp-darklime: 156 100% 40%;
+    --amp-darkviolet: 252 77% 62%;
+    --amp-mint: 156 100% 90%;
+    --amp-stone: 0 0% 98%;
+    --amp-lightstone: 0 0% 92%;
+    --amp-lightgreen: 156 100% 86%;
+
+    --amp-green-100: 156 100% 95%;
+
+    --amp-gray-800: 250 21% 26%;
+    --amp-gray-500: 240 27% 77%;
+    --amp-gray-100: 206 16% 73%;
+    --amp-gray-50: 233 12% 30%;
+    --amp-gray-40: 242 19% 82%;
+    --amp-gray-20: 236 12% 28%;
+
+    --amp-blue-100: 240 11% 16%;
+    --amp-blue-60: 224 72% 48%;
+    --amp-blue-50: 209 94% 62%;
+
+    --amp-white-100: 0 0% 100%;
+    --amp-white-50: 220 13% 84%;
   }
  
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
- 
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
- 
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
- 
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
- 
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
- 
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
- 
     --accent: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
- 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
- 
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;

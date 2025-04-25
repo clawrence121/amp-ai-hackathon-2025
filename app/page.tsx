@@ -11,19 +11,19 @@ export default function Chat() {
       {
         id: "default",
         role: "assistant",
-        content: `Hey! Welcome to AMP, who are you?`,
+        content: `Hey! Welcome to AMP, I'm your onboarding buddy! To get started, can you tell me who you are and about your store?`,
       },
     ],
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="flex flex-col w-full max-w-3xl py-8 mx-auto stretch">
-        <h1 className="text-2xl font-bold text-center mb-8 text-gray-800">
-          AMP AI Onboarding Assistant
+    <div className="relative min-h-screen bg-[hsl(var(--amp-onyx-10))]">
+      <div className="mx-auto flex w-full max-w-3xl flex-col stretch py-8">
+        <h1 className="mb-8 text-center text-2xl font-bold text-[hsl(var(--amp-onyx-75))]">
+          AMP Onboarding Assistant
         </h1>
 
-        <div className="flex-1 space-y-6 mb-24">
+        <div className="mb-24 flex-1 space-y-6">
           {messages.map((m) => (
             <div
               key={m.id}
@@ -36,8 +36,8 @@ export default function Chat() {
                 className={clsx(
                   "max-w-[80%] rounded-lg px-4 py-3 shadow-sm",
                   m.role === "assistant"
-                    ? "bg-white border border-gray-200"
-                    : "bg-blue-600 text-white",
+                    ? "border border-[hsl(var(--amp-onyx-25))] bg-[hsl(var(--amp-white-100))]"
+                    : "bg-[hsl(var(--amp-darkviolet))] text-[hsl(var(--amp-white-100))]",
                 )}
               >
                 <div className="mb-1 text-xs font-semibold">
@@ -46,13 +46,13 @@ export default function Chat() {
                 <div
                   className={clsx(
                     "prose prose-sm max-w-none",
-                    m.role !== "assistant" && "text-white",
+                    m.role !== "assistant" && "text-[hsl(var(--amp-white-100))]",
                   )}
                 >
                   {m.content.length > 0 ? (
                     <ReactMarkdown>{m.content}</ReactMarkdown>
                   ) : (
-                    <span className="italic font-light text-sm opacity-75">
+                    <span className="text-sm font-light italic opacity-75">
                       {"Calling tool: " + m?.toolInvocations?.[0].toolName}
                     </span>
                   )}
@@ -64,18 +64,18 @@ export default function Chat() {
 
         <form
           onSubmit={handleSubmit}
-          className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4"
+          className="absolute bottom-0 left-0 right-0 border-t border-[hsl(var(--amp-onyx-25))] bg-[hsl(var(--amp-white-100))] p-4"
         >
-          <div className="max-w-3xl mx-auto flex">
+          <div className="mx-auto flex max-w-3xl">
             <input
-              className="flex-1 p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="flex-1 rounded-l-lg border border-[hsl(var(--amp-onyx-25))] p-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[hsl(var(--amp-darkviolet))]"
               value={input}
               placeholder="Type your message..."
               onChange={handleInputChange}
             />
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-3 rounded-r-lg hover:bg-blue-700 transition-colors"
+              className="rounded-r-lg bg-[hsl(var(--amp-darkviolet))] px-6 py-3 text-[hsl(var(--amp-white-100))] transition-colors hover:bg-[hsl(var(--amp-darkviolet)/_0.9)]"
             >
               Send
             </button>
