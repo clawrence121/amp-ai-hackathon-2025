@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, "flex")}>
+      <body className={clsx(inter.className, "md:flex")}>
         <Navbar />
         <main className="flex min-h-screen w-full flex-col overflow-auto md:pl-[255px] relative">
           {children}

@@ -65,7 +65,7 @@ export default function Chat() {
 
         <form
           onSubmit={handleSubmit}
-          className="absolute bottom-0 left-0 right-0 border-t border-[hsl(var(--amp-onyx-25))] bg-[hsl(var(--amp-white-100))] p-4"
+          className="md:absolute bottom-0 left-0 right-0 border-t border-[hsl(var(--amp-onyx-25))] bg-[hsl(var(--amp-white-100))] p-4"
         >
           <div className="mx-auto flex max-w-3xl">
             <input
