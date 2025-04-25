@@ -3,6 +3,7 @@
 import { useChat } from "@ai-sdk/react";
 import ReactMarkdown from "react-markdown";
 import clsx from "clsx";
+import Image from "next/image";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -19,9 +20,15 @@ export default function Chat() {
   return (
     <div className="relative min-h-screen bg-[hsl(var(--amp-onyx-10))] px-2 md:px-0">
       <div className="mx-auto flex w-full max-w-3xl flex-col stretch py-8">
-        <h1 className="mb-8 text-center text-2xl font-bold text-[hsl(var(--amp-onyx-75))]">
-          AMP AI CSM
-        </h1>
+        <Image
+          src="/image.png"
+          alt="Description"
+          className="mx-auto mb-8 rounded-md"
+          // fill
+          width={100}
+          height={100}
+          // style={{ objectFit: "cover" }}
+        />
 
         <div className="mb-24 flex-1 space-y-6">
           {messages.map((m) => (
