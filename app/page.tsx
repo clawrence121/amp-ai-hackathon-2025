@@ -17,7 +17,7 @@ export default function Chat() {
   });
 
   return (
-    <div className="relative min-h-screen bg-[hsl(var(--amp-onyx-10))]">
+    <div className="relative min-h-screen bg-[hsl(var(--amp-onyx-10))] px-2 md:px-0">
       <div className="mx-auto flex w-full max-w-3xl flex-col stretch py-8">
         <h1 className="mb-8 text-center text-2xl font-bold text-[hsl(var(--amp-onyx-75))]">
           AMP Onboarding Assistant
@@ -46,7 +46,8 @@ export default function Chat() {
                 <div
                   className={clsx(
                     "prose prose-sm max-w-none",
-                    m.role !== "assistant" && "text-[hsl(var(--amp-white-100))]",
+                    m.role !== "assistant" &&
+                      "text-[hsl(var(--amp-white-100))]",
                   )}
                 >
                   {m.content.length > 0 ? (

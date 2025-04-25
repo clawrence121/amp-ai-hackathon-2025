@@ -9,7 +9,7 @@ export function Root(props: RootProps) {
   return (
     <nav
       className={cn(
-        "fixed flex h-screen w-[255px] flex-col overflow-auto bg-[hsl(var(--upsell-gray-900))] text-[hsl(var(--upsell-white-100))] transition-all ease-in",
+        "hidden fixed md:flex h-screen w-[255px] flex-col overflow-auto bg-[hsl(var(--upsell-gray-900))] text-[hsl(var(--upsell-white-100))] transition-all ease-in",
       )}
     >
       {props.children}
