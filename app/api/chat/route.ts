@@ -25,8 +25,13 @@ export async function POST(req: Request) {
           "Search the web to find information about the customer and their ecommerce store, use this when a customer tells you who they are, or when needing to find more information about specific products, categories or store information",
         parameters: z.object({
           store: z.string(),
+          search: z
+            .string()
+            .describe(
+              "what aspect of the store we are searching for, eg general info, specific products or categories.",
+            ),
         }),
-        execute: async ({ store }) => {
+        execute: async ({ store, search }) => {
           console.log("searching for shop info");
           try {
             const res = await fetch(
@@ -42,7 +47,7 @@ export async function POST(req: Request) {
                   messages: [
                     {
                       role: "user",
-                      content: `Find basic information out about the ecommerce store ${store}.`,
+                      content: `Find basic information out about the ecommerce store ${store} regarding ${search}.`,
                     },
                   ],
                 }),
